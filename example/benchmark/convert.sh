@@ -11,6 +11,7 @@ if [ ! -e ./kerasjs ]; then
 git clone https://github.com/transcranial/keras-js.git kerasjs
 fi
 cd kerasjs
+python encoder.py ../output/kerasjs/squeeze_net/model.h5
 python encoder.py ../output/kerasjs/resnet50/model.h5
 python encoder.py ../output/kerasjs/vgg16/model.h5
 python encoder.py ../output/kerasjs/inception_v3/model.h5

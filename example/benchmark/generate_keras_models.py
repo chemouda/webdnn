@@ -4,6 +4,8 @@ from typing import Type
 from keras.applications import ResNet50, VGG16, InceptionV3
 from keras.engine import Model
 
+from squeeze_net import SqueezeNet
+
 
 def generate(NetworkModel: Type[Model], name: str, root_path: str, ):
     if os.environ.get(f'NO_{name.upper()}', '0') == '1':
@@ -25,3 +27,4 @@ def generate(NetworkModel: Type[Model], name: str, root_path: str, ):
 generate(ResNet50, 'ResNet50', './output/kerasjs/resnet50')
 generate(VGG16, 'VGG16', './output/kerasjs/vgg16')
 generate(InceptionV3, 'InceptionV3', './output/kerasjs/inception_v3')
+generate(SqueezeNet, 'SeueezeNet', './output/kerasjs/squeeze_net')
